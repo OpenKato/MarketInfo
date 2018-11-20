@@ -947,7 +947,7 @@ print("ok")
 # データを読み込む --- (*2)
 wb = px.load_workbook(minami, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
-list_data = ws["A15:M24"] # 任意の範囲を取得
+list_data = ws["A15:M29"] # 任意の範囲を取得
 
 # マスタデータを読む --- (*3)
 wb_iv = px.load_workbook('file_master41.xlsx')
@@ -969,7 +969,7 @@ print("ok")
 # データを読み込む --- (*2)
 wb = px.load_workbook(minami, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
-list_data = ws["A28:M37"] # 任意の範囲を取得
+list_data = ws["A33:M57"] # 任意の範囲を取得
 
 # マスタデータを読む --- (*3)
 wb_iv = px.load_workbook('file_master42.xlsx')
@@ -991,7 +991,7 @@ print("ok")
 # データを読み込む --- (*2)
 wb = px.load_workbook(minami, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
-list_data = ws["A41:M50"] # 任意の範囲を取得
+list_data = ws["A61:M85"] # 任意の範囲を取得
 
 # マスタデータを読む --- (*3)
 wb_iv = px.load_workbook('file_master43.xlsx')
@@ -1013,7 +1013,7 @@ print("ok")
 # データを読み込む --- (*2)
 wb = px.load_workbook(minami, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
-list_data = ws["A54:M63"] # 任意の範囲を取得
+list_data = ws["A89:M98"] # 任意の範囲を取得
 
 # マスタデータを読む --- (*3)
 wb_iv = px.load_workbook('file_master44.xlsx')
@@ -1035,7 +1035,7 @@ print("ok")
 # データを読み込む --- (*2)
 wb = px.load_workbook(minami, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
-list_data = ws["A67:M76"] # 任意の範囲を取得
+list_data = ws["A102:M111"] # 任意の範囲を取得
 
 # マスタデータを読む --- (*3)
 wb_iv = px.load_workbook('file_master45.xlsx')
@@ -1057,7 +1057,7 @@ print("ok")
 # データを読み込む --- (*2)
 wb = px.load_workbook(minami, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
-list_data = ws["A96:M106"] # 任意の範囲を取得
+list_data = ws["A131:M141"] # 任意の範囲を取得
 
 # マスタデータを読む --- (*3)
 wb_iv = px.load_workbook('file_master46.xlsx')
