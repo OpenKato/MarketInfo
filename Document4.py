@@ -569,7 +569,7 @@ print("ok")
 # 東北データを読み込む --- (*2)
 wb = px.load_workbook(touhoku, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
-list_data = ws["A99:M106"] # 任意の範囲を取得
+list_data = ws["A96:M106"] # 任意の範囲を取得
 
 # マスタデータを読む --- (*3)
 wb_iv = px.load_workbook('file_master25.xlsx')
