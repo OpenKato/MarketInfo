@@ -437,7 +437,7 @@ print("ok")
 # 東北データを読み込む --- (*2)
 wb = px.load_workbook(touhoku, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
-list_data = ws["A3:M11"] # 任意の範囲を取得
+list_data = ws["A4:M11"] # 任意の範囲を取得
 
 # マスタデータを読む --- (*3)
 wb_iv = px.load_workbook('file_master19.xlsx')
@@ -459,7 +459,7 @@ print("ok")
 # 東北データを読み込む --- (*2)
 wb = px.load_workbook(touhoku, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
-list_data = ws["A15:M24"] # 任意の範囲を取得
+list_data = ws["A14:M24"] # 任意の範囲を取得
 
 # マスタデータを読む --- (*3)
 wb_iv = px.load_workbook('file_master20.xlsx')
@@ -615,7 +615,7 @@ print("ok")
 # データを読み込む --- (*2)
 wb = px.load_workbook(kita, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
-list_data = ws["A14:M24"] # 任意の範囲を取得
+list_data = ws["A15:M24"] # 任意の範囲を取得
 
 # マスタデータを読む --- (*3)
 wb_iv = px.load_workbook('file_master27.xlsx')
