@@ -3,17 +3,17 @@
 import openpyxl as px
 from datetime import datetime
 
-# ƒtƒ@ƒCƒ‹–¼‚Ìw’è‚È‚Ç --- (*1)
-file_master = "file_master.xlsx" # ƒ}ƒXƒ^[ƒf[ƒ^
-touhoku = "touhoku.xlsx" # “Œ–k‚Ìƒf[ƒ^
-kita = "kita.xlsx"       # –kŠÖ“Œ‚Ìƒf[ƒ^
-minami = "minami.xlsx"   # “ìŠÖ“Œ‚Ìƒf[ƒ^
-shizuoka  = "shizuoka.xlsx" # Ã‰ª‚Ìƒf[ƒ^
-hiroshima = "hiroshima.xlsx" # L“‡‚Ìƒf[ƒ^
-fukuoka ="fukuoka.xlsx"      # •Ÿ‰ª‚Ìƒf[ƒ^
-tokyo ="tokyo.xlsx"      # “Œ‹‚Ìƒf[ƒ^
-nagoya ="nagoya.xlsx"      # –¼ŒÃ‰®‚Ìƒf[ƒ^
-osaka ="osaka.xlsx"      # ‘åã‚Ìƒf[ƒ^
+# ãƒ•ã‚¡ã‚¤ãƒ«åã®æŒ‡å®šãªã© --- (*1)
+file_master = "file_master.xlsx" # ãƒã‚¹ã‚¿ãƒ¼ãƒ‡ãƒ¼ã‚¿
+touhoku = "touhoku.xlsx" # æ±åŒ—ã®ãƒ‡ãƒ¼ã‚¿
+kita = "kita.xlsx"       # åŒ—é–¢æ±ã®ãƒ‡ãƒ¼ã‚¿
+minami = "minami.xlsx"   # å—é–¢æ±ã®ãƒ‡ãƒ¼ã‚¿
+shizuoka  = "shizuoka.xlsx" # é™å²¡ã®ãƒ‡ãƒ¼ã‚¿
+hiroshima = "hiroshima.xlsx" # åºƒå³¶ã®ãƒ‡ãƒ¼ã‚¿
+fukuoka ="fukuoka.xlsx"      # ç¦å²¡ã®ãƒ‡ãƒ¼ã‚¿
+tokyo ="tokyo.xlsx"      # æ±äº¬ã®ãƒ‡ãƒ¼ã‚¿
+nagoya ="nagoya.xlsx"      # åå¤å±‹ã®ãƒ‡ãƒ¼ã‚¿
+osaka ="osaka.xlsx"      # å¤§é˜ªã®ãƒ‡ãƒ¼ã‚¿
 
 
 file_master2 = "file_master2.xlsx"
@@ -68,415 +68,435 @@ file_master50 = "file_master50.xlsx"
 file_master51 = "file_master51.xlsx"
 
 
-# “Œ–kƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(touhoku, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["Nov"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A14:AX200"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# æ±åŒ—ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(touhoku, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["Nov"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A14:AX200"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master.xlsx')
 ws_iv = wb_iv["Sheet9"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=1+y+1, column=0+x+1, value=v)
    
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master2)
 print("ok")
 
-# “Œ–kƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(touhoku, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["Dec"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A14:AX200"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# æ±åŒ—ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(touhoku, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["Dec"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A14:AX200"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master2.xlsx')
 ws_iv = wb_iv["Sheet10"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=1+y+1, column=0+x+1, value=v)
    
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master3)
 print("ok")
 
-# –kŠÖ“Œƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(kita, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["Nov"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A14:AX200"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# åŒ—é–¢æ±ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(kita, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["Nov"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A14:AX200"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master3.xlsx')
 ws_iv = wb_iv["Sheet9"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=201+y+1, column=0+x+1, value=v)
    
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master4)
 print("ok")
 
-# –kŠÖ“Œƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(kita, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["Dec"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A14:AX200"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# åŒ—é–¢æ±ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(kita, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["Dec"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A14:AX200"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master4.xlsx')
 ws_iv = wb_iv["Sheet10"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=201+y+1, column=0+x+1, value=v)
    
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master5)
 print("ok")
 
-# “ìŠÖ“Œƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(minami, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["Nov"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A14:AX200"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# å—é–¢æ±ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(minami, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["Nov"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A14:AX200"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master5.xlsx')
 ws_iv = wb_iv["Sheet9"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=401+y+1, column=0+x+1, value=v)
    
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master6)
 print("ok")
 
-# “ìŠÖ“Œƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(minami, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["Dec"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A14:AX200"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# å—é–¢æ±ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(minami, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["Dec"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A14:AX200"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master6.xlsx')
 ws_iv = wb_iv["Sheet10"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=401+y+1, column=0+x+1, value=v)
    
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master7)
 print("ok")
 
-# Ã‰ªƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(shizuoka, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["Nov"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A14:AX200"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# é™å²¡ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(shizuoka, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["Nov"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A14:AX200"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master7.xlsx')
 ws_iv = wb_iv["Sheet9"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=601+y+1, column=0+x+1, value=v)
    
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master8)
 print("ok")
 
-# Ã‰ªƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(shizuoka, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["Dec"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A14:AX200"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# é™å²¡ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(shizuoka, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["Dec"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A14:AX200"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master8.xlsx')
 ws_iv = wb_iv["Sheet10"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=601+y+1, column=0+x+1, value=v)
    
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master9)
 print("ok")
 
-# L“‡ƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(hiroshima, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["Nov"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A14:AX200"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# åºƒå³¶ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(hiroshima, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["Nov"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A14:AX200"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master9.xlsx')
 ws_iv = wb_iv["Sheet9"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=801+y+1, column=0+x+1, value=v)
    
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master10)
 print("ok")
 
-# L“‡ƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(hiroshima, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["Dec"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A14:AX200"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# åºƒå³¶ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(hiroshima, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["Dec"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A14:AX200"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master10.xlsx')
 ws_iv = wb_iv["Sheet10"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=801+y+1, column=0+x+1, value=v)
    
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master11)
 print("ok")
 
-# •Ÿ‰ªƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(fukuoka, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["Nov"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A14:AX200"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# ç¦å²¡ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(fukuoka, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["Nov"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A14:AX200"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master11.xlsx')
 ws_iv = wb_iv["Sheet9"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=1001+y+1, column=0+x+1, value=v)
    
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master12)
 print("ok")
 
-# •Ÿ‰ªƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(fukuoka, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["Dec"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A14:AX200"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# ç¦å²¡ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(fukuoka, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["Dec"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A14:AX200"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master12.xlsx')
 ws_iv = wb_iv["Sheet10"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=1001+y+1, column=0+x+1, value=v)
    
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master13)
 print("ok")
 
-# “Œ‹ƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(tokyo, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["Nov"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A14:AX200"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# æ±äº¬ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(tokyo, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["Nov"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A14:AX200"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master13.xlsx')
 ws_iv = wb_iv["Sheet9"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=1201+y+1, column=0+x+1, value=v)
    
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master14)
 print("ok")
 
-# “Œ‹ƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(tokyo, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["Dec"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A14:AX200"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# æ±äº¬ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(tokyo, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["Dec"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A14:AX200"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master14.xlsx')
 ws_iv = wb_iv["Sheet10"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=1201+y+1, column=0+x+1, value=v)
    
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master15)
 print("ok")
 
-# –¼ŒÃ‰®ƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(nagoya, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["Nov"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A14:AX200"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# åå¤å±‹ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(nagoya, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["Nov"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A14:AX200"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master15.xlsx')
 ws_iv = wb_iv["Sheet9"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=1401+y+1, column=0+x+1, value=v)
    
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master16)
 print("ok")
 
-# –¼ŒÃ‰®ƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(nagoya, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["Dec"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A14:AX200"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# åå¤å±‹ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(nagoya, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["Dec"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A14:AX200"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master16.xlsx')
 ws_iv = wb_iv["Sheet10"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=1401+y+1, column=0+x+1, value=v)
    
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master17)
 print("ok")
 
-# ‘åãƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(osaka, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["Nov"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A14:AX200"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# å¤§é˜ªãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(osaka, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["Nov"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A14:AX200"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master17.xlsx')
 ws_iv = wb_iv["Sheet9"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=1601+y+1, column=0+x+1, value=v)
    
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master18)
 print("ok")
 
-# ‘åãƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(osaka, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["Dec"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A14:AX200"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# å¤§é˜ªãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(osaka, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["Dec"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A14:AX200"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master18.xlsx')
 ws_iv = wb_iv["Sheet10"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=1601+y+1, column=0+x+1, value=v)
    
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master19)
 print("ok")
 
-#“–Œó’A—ˆŒ¤‹µ‚ÍI—¹IIIIIIIIIII
-#‚±‚±‚©‚ç‚ÍAŒ»êƒjƒ…[ƒX
-#“Œ–k
+#å½“æœˆå—æ³¨ã€æ¥æœˆå•†æ³ã¯çµ‚äº†ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼
+#ã“ã“ã‹ã‚‰ã¯ã€ç¾å ´ãƒ‹ãƒ¥ãƒ¼ã‚¹
+#æ±åŒ—
 
-#¸’î•ñ
+#å¤±æ³¨æƒ…å ±
 
-# “Œ–kƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(touhoku, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["News"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A3:M11"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# æ±åŒ—ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(touhoku, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["News"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A3:M11"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master19.xlsx')
 ws_iv = wb_iv["shi"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=1+y+1, column=0+x+1, value=v)
 
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master20)
 print("ok")
 
-#‹£‡î•ñ
+#ç«¶åˆæƒ…å ±
 
-# “Œ–kƒf[ƒ^‚ğ“Ç‚İ‚Ş --- (*2)
-wb = px.load_workbook(touhoku, data_only=True) # ”®‚Å‚È‚­’l‚ğæ‚èo‚·ê‡
-ws = wb["News"] # ƒV[ƒg–¼‚ğ‘I‚Ô
-list_data = ws["A15:M24"] # ”CˆÓ‚Ì”ÍˆÍ‚ğæ“¾
+# æ±åŒ—ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(touhoku, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["News"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A15:M24"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
 
-# ƒ}ƒXƒ^ƒf[ƒ^‚ğ“Ç‚Ş --- (*3)
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
 wb_iv = px.load_workbook('file_master20.xlsx')
 ws_iv = wb_iv["kyo"]
 
-# ”[•i•¨‚ğ‘‚«‚Ş --- (*5)
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
 for y, row in enumerate(list_data):
   for x, cell in enumerate(row):
     if (cell is None) or (cell.value is None): continue
     v = cell.value
     ws_iv.cell(row=1+y+1, column=0+x+1, value=v)
 
-# V‚µ‚­•Û‘¶‚·‚é --- (*6)
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
 wb_iv.save(file_master21)
 print("ok")
 
+#ç«¶åˆæƒ…å ±
 
+# æ±åŒ—ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ --- (*2)
+wb = px.load_workbook(touhoku, data_only=True) # æ•°å¼ã§ãªãå€¤ã‚’å–ã‚Šå‡ºã™å ´åˆ
+ws = wb["News"] # ã‚·ãƒ¼ãƒˆåã‚’é¸ã¶
+list_data = ws["A28:M37"] # ä»»æ„ã®ç¯„å›²ã‚’å–å¾—
+
+# ãƒã‚¹ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã‚€ --- (*3)
+wb_iv = px.load_workbook('file_master21.xlsx')
+ws_iv = wb_iv["syo"]
+
+# ç´å“ç‰©ã‚’æ›¸ãè¾¼ã‚€ --- (*5)
+for y, row in enumerate(list_data):
+  for x, cell in enumerate(row):
+    if (cell is None) or (cell.value is None): continue
+    v = cell.value
+    ws_iv.cell(row=1+y+1, column=0+x+1, value=v)
+
+# æ–°ã—ãä¿å­˜ã™ã‚‹ --- (*6)
+wb_iv.save(file_master22)
+print("ok")
 
 
 
