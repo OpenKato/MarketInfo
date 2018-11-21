@@ -1812,7 +1812,7 @@ print("ok")
 #他部門依頼情報
 
 # データを読み込む --- (*2)
-wb = px.load_workbook(hiroshima, data_only=True) # 数式でなく値を取り出す場合
+wb = px.load_workbook(fukuoka, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
 list_data = ws["A54:M63"] # 任意の範囲を取得
 
