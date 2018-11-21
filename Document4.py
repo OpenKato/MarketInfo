@@ -96,6 +96,16 @@ file_master76 = "file_master76.xlsx"
 file_master77 = "file_master77.xlsx"
 file_master78 = "file_master78.xlsx"
 file_master79 = "file_master79.xlsx"
+file_master80 = "file_master80.xlsx"
+file_master81 = "file_master81.xlsx"
+file_master82 = "file_master82.xlsx"
+file_master83 = "file_master83.xlsx"
+file_master84 = "file_master84.xlsx"
+file_master85 = "file_master85.xlsx"
+file_master86 = "file_master86.xlsx"
+file_master87 = "file_master87.xlsx"
+file_master88 = "file_master88.xlsx"
+file_master89 = "file_master89.xlsx"
 
 
 # 東北データを読み込む --- (*2)
@@ -1240,12 +1250,12 @@ for y, row in enumerate(list_data):
 wb_iv.save(file_master54)
 print("ok")
 
-#大阪
+#名古屋
 
 #失注情報
 
 # データを読み込む --- (*2)
-wb = px.load_workbook(osaka, data_only=True) # 数式でなく値を取り出す場合
+wb = px.load_workbook(nagoya, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
 list_data = ws["A4:M11"] # 任意の範囲を取得
 
@@ -1267,7 +1277,7 @@ print("ok")
 #競合情報
 
 # データを読み込む --- (*2)
-wb = px.load_workbook(osaka, data_only=True) # 数式でなく値を取り出す場合
+wb = px.load_workbook(nagoya, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
 list_data = ws["A15:M24"] # 任意の範囲を取得
 
@@ -1289,7 +1299,7 @@ print("ok")
 #商社情報
 
 # データを読み込む --- (*2)
-wb = px.load_workbook(osaka, data_only=True) # 数式でなく値を取り出す場合
+wb = px.load_workbook(nagoya, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
 list_data = ws["A28:M37"] # 任意の範囲を取得
 
@@ -1311,7 +1321,7 @@ print("ok")
 #顧客情報
 
 # データを読み込む --- (*2)
-wb = px.load_workbook(osaka, data_only=True) # 数式でなく値を取り出す場合
+wb = px.load_workbook(nagoya, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
 list_data = ws["A41:M50"] # 任意の範囲を取得
 
@@ -1333,7 +1343,7 @@ print("ok")
 #他部門依頼情報
 
 # データを読み込む --- (*2)
-wb = px.load_workbook(osaka, data_only=True) # 数式でなく値を取り出す場合
+wb = px.load_workbook(nagoya, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
 list_data = ws["A54:M63"] # 任意の範囲を取得
 
@@ -1355,7 +1365,7 @@ print("ok")
 #クレーム情報
 
 # データを読み込む --- (*2)
-wb = px.load_workbook(osaka, data_only=True) # 数式でなく値を取り出す場合
+wb = px.load_workbook(nagoya, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
 list_data = ws["A67:M76"] # 任意の範囲を取得
 
@@ -1377,7 +1387,7 @@ print("ok")
 #クレーム情報
 
 # データを読み込む --- (*2)
-wb = px.load_workbook(osaka, data_only=True) # 数式でなく値を取り出す場合
+wb = px.load_workbook(nagoya, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
 list_data = ws["A82:M92"] # 任意の範囲を取得
 
@@ -1397,12 +1407,12 @@ wb_iv.save(file_master61)
 print("ok")
 
 
-#広島
+#大阪
 
 #失注情報
 
 # データを読み込む --- (*2)
-wb = px.load_workbook(hiroshima, data_only=True) # 数式でなく値を取り出す場合
+wb = px.load_workbook(osaka, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
 list_data = ws["A4:M11"] # 任意の範囲を取得
 
@@ -1424,7 +1434,7 @@ print("ok")
 #競合情報
 
 # データを読み込む --- (*2)
-wb = px.load_workbook(hiroshima, data_only=True) # 数式でなく値を取り出す場合
+wb = px.load_workbook(osaka, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
 list_data = ws["A15:M24"] # 任意の範囲を取得
 
@@ -1446,7 +1456,7 @@ print("ok")
 #商社情報
 
 # データを読み込む --- (*2)
-wb = px.load_workbook(hiroshima, data_only=True) # 数式でなく値を取り出す場合
+wb = px.load_workbook(osaka, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
 list_data = ws["A28:M37"] # 任意の範囲を取得
 
@@ -1468,7 +1478,7 @@ print("ok")
 #顧客情報
 
 # データを読み込む --- (*2)
-wb = px.load_workbook(hiroshima, data_only=True) # 数式でなく値を取り出す場合
+wb = px.load_workbook(osaka, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
 list_data = ws["A41:M50"] # 任意の範囲を取得
 
@@ -1490,7 +1500,7 @@ print("ok")
 #他部門依頼情報
 
 # データを読み込む --- (*2)
-wb = px.load_workbook(hiroshima, data_only=True) # 数式でなく値を取り出す場合
+wb = px.load_workbook(osaka, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
 list_data = ws["A54:M63"] # 任意の範囲を取得
 
@@ -1512,7 +1522,7 @@ print("ok")
 #クレーム情報
 
 # データを読み込む --- (*2)
-wb = px.load_workbook(hiroshima, data_only=True) # 数式でなく値を取り出す場合
+wb = px.load_workbook(osaka, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
 list_data = ws["A67:M76"] # 任意の範囲を取得
 
@@ -1534,7 +1544,7 @@ print("ok")
 #クレーム情報
 
 # データを読み込む --- (*2)
-wb = px.load_workbook(hiroshima, data_only=True) # 数式でなく値を取り出す場合
+wb = px.load_workbook(osaka, data_only=True) # 数式でなく値を取り出す場合
 ws = wb["News"] # シート名を選ぶ
 list_data = ws["A82:M92"] # 任意の範囲を取得
 
