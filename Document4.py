@@ -1719,4 +1719,158 @@ for y, row in enumerate(list_data):
 wb_iv.save(file_master75)
 print("ok")
 
+#福岡
 
+#失注情報
+
+# データを読み込む --- (*2)
+wb = px.load_workbook(fukuoka, data_only=True) # 数式でなく値を取り出す場合
+ws = wb["News"] # シート名を選ぶ
+list_data = ws["A4:M11"] # 任意の範囲を取得
+
+# マスタデータを読む --- (*3)
+wb_iv = px.load_workbook('file_master75.xlsx')
+ws_iv = wb_iv["shi"]
+
+# 納品物を書き込む --- (*5)
+for y, row in enumerate(list_data):
+  for x, cell in enumerate(row):
+    if (cell is None) or (cell.value is None): continue
+    v = cell.value
+    ws_iv.cell(row=81+y+1, column=0+x+1, value=v)
+
+# 新しく保存する --- (*6)
+wb_iv.save(file_master76)
+print("ok")
+
+#競合情報
+
+# データを読み込む --- (*2)
+wb = px.load_workbook(fukuoka, data_only=True) # 数式でなく値を取り出す場合
+ws = wb["News"] # シート名を選ぶ
+list_data = ws["A15:M24"] # 任意の範囲を取得
+
+# マスタデータを読む --- (*3)
+wb_iv = px.load_workbook('file_master76.xlsx')
+ws_iv = wb_iv["kyo"]
+
+# 納品物を書き込む --- (*5)
+for y, row in enumerate(list_data):
+  for x, cell in enumerate(row):
+    if (cell is None) or (cell.value is None): continue
+    v = cell.value
+    ws_iv.cell(row=86+y+1, column=0+x+1, value=v)
+
+# 新しく保存する --- (*6)
+wb_iv.save(file_master77)
+print("ok")
+
+#商社情報
+
+# データを読み込む --- (*2)
+wb = px.load_workbook(fukuoka, data_only=True) # 数式でなく値を取り出す場合
+ws = wb["News"] # シート名を選ぶ
+list_data = ws["A28:M37"] # 任意の範囲を取得
+
+# マスタデータを読む --- (*3)
+wb_iv = px.load_workbook('file_master77.xlsx')
+ws_iv = wb_iv["syo"]
+
+# 納品物を書き込む --- (*5)
+for y, row in enumerate(list_data):
+  for x, cell in enumerate(row):
+    if (cell is None) or (cell.value is None): continue
+    v = cell.value
+    ws_iv.cell(row=96+y+1, column=0+x+1, value=v)
+
+# 新しく保存する --- (*6)
+wb_iv.save(file_master78)
+print("ok")
+
+#顧客情報
+
+# データを読み込む --- (*2)
+wb = px.load_workbook(fukuoka, data_only=True) # 数式でなく値を取り出す場合
+ws = wb["News"] # シート名を選ぶ
+list_data = ws["A41:M50"] # 任意の範囲を取得
+
+# マスタデータを読む --- (*3)
+wb_iv = px.load_workbook('file_master78.xlsx')
+ws_iv = wb_iv["ko"]
+
+# 納品物を書き込む --- (*5)
+for y, row in enumerate(list_data):
+  for x, cell in enumerate(row):
+    if (cell is None) or (cell.value is None): continue
+    v = cell.value
+    ws_iv.cell(row=96+y+1, column=0+x+1, value=v)
+
+# 新しく保存する --- (*6)
+wb_iv.save(file_master79)
+print("ok")
+
+#他部門依頼情報
+
+# データを読み込む --- (*2)
+wb = px.load_workbook(hiroshima, data_only=True) # 数式でなく値を取り出す場合
+ws = wb["News"] # シート名を選ぶ
+list_data = ws["A54:M63"] # 任意の範囲を取得
+
+# マスタデータを読む --- (*3)
+wb_iv = px.load_workbook('file_master79.xlsx')
+ws_iv = wb_iv["ta"]
+
+# 納品物を書き込む --- (*5)
+for y, row in enumerate(list_data):
+  for x, cell in enumerate(row):
+    if (cell is None) or (cell.value is None): continue
+    v = cell.value
+    ws_iv.cell(row=81+y+1, column=0+x+1, value=v)
+
+# 新しく保存する --- (*6)
+wb_iv.save(file_master80)
+print("ok")
+
+#クレーム情報
+
+# データを読み込む --- (*2)
+wb = px.load_workbook(fukuoka, data_only=True) # 数式でなく値を取り出す場合
+ws = wb["News"] # シート名を選ぶ
+list_data = ws["A67:M76"] # 任意の範囲を取得
+
+# マスタデータを読む --- (*3)
+wb_iv = px.load_workbook('file_master80.xlsx')
+ws_iv = wb_iv["ku"]
+
+# 納品物を書き込む --- (*5)
+for y, row in enumerate(list_data):
+  for x, cell in enumerate(row):
+    if (cell is None) or (cell.value is None): continue
+    v = cell.value
+    ws_iv.cell(row=81+y+1, column=0+x+1, value=v)
+
+# 新しく保存する --- (*6)
+wb_iv.save(file_master81)
+print("ok")
+
+#海外情報
+
+# データを読み込む --- (*2)
+wb = px.load_workbook(fukuoka, data_only=True) # 数式でなく値を取り出す場合
+ws = wb["News"] # シート名を選ぶ
+list_data = ws["A96:M106"] # 任意の範囲を取得
+
+# マスタデータを読む --- (*3)
+wb_iv = px.load_workbook('file_master81.xlsx')
+ws_iv = wb_iv["ka"]
+
+# 納品物を書き込む --- (*5)
+for y, row in enumerate(list_data):
+  for x, cell in enumerate(row):
+    if (cell is None) or (cell.value is None): continue
+    v = cell.value
+    ws_iv.cell(row=71+y+1, column=0+x+1, value=v)
+
+# 新しく保存する --- (*6)
+wb_iv.save(file_master82)
+print("ok")
