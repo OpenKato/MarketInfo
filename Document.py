@@ -125,7 +125,7 @@ list_data = ws["A14:AX200"] # 任意の範囲を取得
 
 # マスタデータを読む --- (*3)
 #wb_iv = px.load_workbook('file_master6.xlsx')
-#ws_iv = wb_iv["Sheet10"]
+ws_iv = wb_iv["Sheet10"]
 
 # 納品物を書き込む --- (*5)
 for y, row in enumerate(list_data):
